@@ -1,0 +1,108 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "Profil utilisateur de l'agence (administrateur, gérant ou caissier).",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Identifiant unique Firebase Auth (UID)."
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "Adresse email du compte utilisateur."
+        },
+        "displayName": {
+          "type": "string",
+          "maxLength": 100,
+          "description": "Nom ou prénom de l'opérateur ou du gérant."
+        },
+        "role": {
+          "type": "string",
+          "enum": ["admin", "manager", "cashier"],
+          "description": "Rôle dans l'agence."
+        },
+        "agencyName": {
+          "type": "string",
+          "maxLength": 120,
+          "description": "Nom de l'agence ou point de service."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date de création du compte."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date de dernière modification du compte."
+        }
+      },
+      "required": ["id", "email", "role", "createdAt", "updatedAt"]
+    },
+    "DailyRecord": {
+      "title": "DailyRecord",
+      "description": "Fiche financière journalière consolidant compartiments, transferts et règlements.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Identifiant du document journalier (souvent YYYY-MM-DD)."
+        },
+        "date": {
+          "type": "string",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$",
+          "description": "Date de la journée au format AAAA-MM-JJ."
+        },
+        "userId": {
+          "type": "string",
+          "description": "UID de l'utilisateur ayant créé ou validé la fiche."
+        },
+        "compartments": {
+          "type": "array",
+          "description": "Liste des compartiments financiers (soldes début, fin et différences)."
+        },
+        "transfers": {
+          "type": "array",
+          "description": "Transactions de transferts internationaux (RIA, Western Union, MoneyGram)."
+        },
+        "seddoPartners": {
+          "type": "array",
+          "description": "Ventes et règlements des partenaires libres Seddo."
+        },
+        "cashBreakdown": {
+          "type": "object",
+          "description": "Comptage physique des espèces par coupure (billetterie)."
+        },
+        "operatorNotes": {
+          "type": "string",
+          "maxLength": 1000,
+          "description": "Observations ou commentaires du caissier pour la journée."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date de création de la fiche."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Date de dernière mise à jour de la fiche."
+        }
+      },
+      "required": ["id", "date", "userId", "compartments", "createdAt", "updatedAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "Stockage des profils utilisateurs authentifiés de l'application."
+    },
+    "/records/{recordId}": {
+      "schema": "DailyRecord",
+      "description": "Fiches journalières de caisse et de transferts financiers."
+    }
+  }
+}

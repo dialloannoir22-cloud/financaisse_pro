@@ -1,0 +1,8 @@
+{
+  "name": "Remix FinanCaisse Pro - Gestion Financière \u0026 Multiservices",
+  "description": "Application intuitive de gestion financière quotidienne pour caisses et agences de transfert (RIA, Western Union, MoneyGram, Wave, Orange Money, UV Master, Seddo, Banques, Liquidités) avec calculs automatiques et historique cloud.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

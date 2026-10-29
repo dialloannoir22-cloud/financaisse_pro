@@ -1,0 +1,106 @@
+{
+  "2026-10-27": {
+    "id": "2026-10-27",
+    "date": "2026-10-27",
+    "userId": "dialloannoir22@gmail.com",
+    "compartments": [
+      { "id": "ria", "name": "RIA", "category": "transfert_international", "startOfDay": 1420000, "endOfDay": 2850000, "netDifference": 1430000 },
+      { "id": "wu", "name": "Western Union", "category": "transfert_international", "startOfDay": 1850000, "endOfDay": 3150000, "netDifference": 1300000 },
+      { "id": "moneygram", "name": "MoneyGram", "category": "transfert_international", "startOfDay": 980000, "endOfDay": 1780000, "netDifference": 800000 },
+      { "id": "wave", "name": "Wave", "category": "mobile_money", "startOfDay": 2500000, "endOfDay": 3100000, "netDifference": 600000 },
+      { "id": "orange_money", "name": "Orange Money", "category": "mobile_money", "startOfDay": 1800000, "endOfDay": 2200000, "netDifference": 400000 },
+      { "id": "versement_bancaire", "name": "Versement Bancaire", "category": "banque", "startOfDay": 2000000, "endOfDay": 2500000, "netDifference": 500000 },
+      { "id": "uv_master", "name": "UV Master", "category": "telecom_uv", "startOfDay": 2600000, "endOfDay": 2400000, "netDifference": -200000 },
+      { "id": "seddo", "name": "Seddo", "category": "telecom_uv", "startOfDay": 350000, "endOfDay": 280000, "netDifference": -70000 },
+      { "id": "liquidites", "name": "Liquidités (Caisse)", "category": "especes", "startOfDay": 1500000, "endOfDay": 2437061, "netDifference": 937061 }
+    ],
+    "previousDayReliquatReported": 2240000,
+    "transfers": [
+      { "id": "tx_20261027_ria", "operator": "RIA", "type": "retrait", "m1": 1430000, "m2": 1420000, "tax": 10000, "clientName": "Mamadou Lamine Diop", "referenceNumber": "RIA-882019", "time": "10:15" },
+      { "id": "tx_20261027_wu", "operator": "Western Union", "type": "envoi", "m1": 1300000, "m2": 1250000, "tax": 50000, "clientName": "Mariama Ba", "referenceNumber": "WU-559102", "time": "11:45" },
+      { "id": "tx_20261027_mg", "operator": "MoneyGram", "type": "retrait", "m1": 800000, "m2": 790000, "tax": 10000, "clientName": "Ousmane Diallo", "referenceNumber": "MG-339101", "time": "14:20" }
+    ],
+    "seddoPartners": [
+      { "id": "partner_20261027_1", "partnerName": "Alhaji Teleboutique", "amount": 40000, "paymentMode": "Espèces", "time": "10:30" },
+      { "id": "partner_20261027_2", "partnerName": "Kiosque Cheikh Fall", "amount": 30000, "paymentMode": "Wave", "time": "15:10" }
+    ],
+    "cashBreakdown": {
+      "b10000": 170,
+      "b5000": 100,
+      "b2000": 80,
+      "b1000": 70,
+      "b500": 14,
+      "coins": 61
+    },
+    "operatorNotes": "Journée du 27 Octobre 2026 clôturée avec succès. Reliquat strict net certifié : +5 697 061 F CFA.",
+    "createdAt": "2026-10-27T08:00:00.000Z",
+    "updatedAt": "2026-10-27T19:30:00.000Z"
+  },
+  "2026-10-28": {
+    "id": "2026-10-28",
+    "date": "2026-10-28",
+    "userId": "dialloannoir22@gmail.com",
+    "compartments": [
+      { "id": "ria", "name": "RIA", "category": "transfert_international", "startOfDay": 1420000, "endOfDay": 2850000, "netDifference": 1430000 },
+      { "id": "wu", "name": "Western Union", "category": "transfert_international", "startOfDay": 1850000, "endOfDay": 2850000, "netDifference": 1000000 },
+      { "id": "moneygram", "name": "MoneyGram", "category": "transfert_international", "startOfDay": 980000, "endOfDay": 1480000, "netDifference": 500000 },
+      { "id": "wave", "name": "Wave", "category": "mobile_money", "startOfDay": 2500000, "endOfDay": 3000000, "netDifference": 500000 },
+      { "id": "orange_money", "name": "Orange Money", "category": "mobile_money", "startOfDay": 1800000, "endOfDay": 2100000, "netDifference": 300000 },
+      { "id": "versement_bancaire", "name": "Versement Bancaire", "category": "banque", "startOfDay": 2000000, "endOfDay": 2300000, "netDifference": 300000 },
+      { "id": "uv_master", "name": "UV Master", "category": "telecom_uv", "startOfDay": 2600000, "endOfDay": 2450000, "netDifference": -150000 },
+      { "id": "seddo", "name": "Seddo", "category": "telecom_uv", "startOfDay": 350000, "endOfDay": 290000, "netDifference": -60000 },
+      { "id": "liquidites", "name": "Liquidités (Caisse)", "category": "especes", "startOfDay": 1500000, "endOfDay": 2377061, "netDifference": 877061 }
+    ],
+    "previousDayReliquatReported": 5697061,
+    "transfers": [
+      { "id": "tx_20261028_ria", "operator": "RIA", "type": "retrait", "m1": 1430000, "m2": 1420000, "tax": 10000, "clientName": "Mamadou Lamine Diop", "referenceNumber": "RIA-882019", "time": "10:15" },
+      { "id": "tx_20261028_wu", "operator": "Western Union", "type": "envoi", "m1": 1000000, "m2": 960000, "tax": 40000, "clientName": "Mariama Ba", "referenceNumber": "WU-559102", "time": "11:45" },
+      { "id": "tx_20261028_mg", "operator": "MoneyGram", "type": "retrait", "m1": 500000, "m2": 490000, "tax": 10000, "clientName": "Ousmane Diallo", "referenceNumber": "MG-339101", "time": "14:20" }
+    ],
+    "seddoPartners": [
+      { "id": "partner_20261028_1", "partnerName": "Alhaji Teleboutique", "amount": 35000, "paymentMode": "Espèces", "time": "10:30" },
+      { "id": "partner_20261028_2", "partnerName": "Kiosque Cheikh Fall", "amount": 25000, "paymentMode": "Wave", "time": "15:10" }
+    ],
+    "cashBreakdown": {
+      "b10000": 160,
+      "b5000": 100,
+      "b2000": 80,
+      "b1000": 90,
+      "b500": 50,
+      "coins": 61
+    },
+    "operatorNotes": "Journée du 28 Octobre 2026 enregistrée avec succès. Report du reliquat strict de veille (+5 697 061 F CFA) pris en compte.",
+    "createdAt": "2026-10-28T08:00:00.000Z",
+    "updatedAt": "2026-10-28T19:30:00.000Z"
+  },
+  "2026-10-29": {
+    "id": "2026-10-29",
+    "date": "2026-10-29",
+    "userId": "dialloannoir22@gmail.com",
+    "compartments": [
+      { "id": "ria", "name": "RIA", "category": "transfert_international", "startOfDay": 0, "endOfDay": 0, "netDifference": 0 },
+      { "id": "wu", "name": "Western Union", "category": "transfert_international", "startOfDay": 0, "endOfDay": 0, "netDifference": 0 },
+      { "id": "moneygram", "name": "MoneyGram", "category": "transfert_international", "startOfDay": 0, "endOfDay": 0, "netDifference": 0 },
+      { "id": "wave", "name": "Wave", "category": "mobile_money", "startOfDay": 0, "endOfDay": 0, "netDifference": 0 },
+      { "id": "orange_money", "name": "Orange Money", "category": "mobile_money", "startOfDay": 0, "endOfDay": 0, "netDifference": 0 },
+      { "id": "versement_bancaire", "name": "Versement Bancaire", "category": "banque", "startOfDay": 0, "endOfDay": 0, "netDifference": 0 },
+      { "id": "uv_master", "name": "UV Master", "category": "telecom_uv", "startOfDay": 0, "endOfDay": 0, "netDifference": 0 },
+      { "id": "seddo", "name": "Seddo", "category": "telecom_uv", "startOfDay": 0, "endOfDay": 0, "netDifference": 0 },
+      { "id": "liquidites", "name": "Liquidités (Caisse)", "category": "especes", "startOfDay": 0, "endOfDay": 0, "netDifference": 0 }
+    ],
+    "previousDayReliquatReported": 4697061,
+    "transfers": [],
+    "seddoPartners": [],
+    "cashBreakdown": {
+      "b10000": 0,
+      "b5000": 0,
+      "b2000": 0,
+      "b1000": 0,
+      "b500": 0,
+      "coins": 0
+    },
+    "operatorNotes": "Journée en cours du 29 Octobre 2026.",
+    "createdAt": "2026-10-29T08:00:00.000Z",
+    "updatedAt": "2026-10-29T10:00:00.000Z"
+  }
+}

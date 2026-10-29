@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="fr" class="notranslate" translate="no">
+  <head>
+    <script>
+      (function() {
+        // Ignorer et neutraliser les erreurs WebSocket HMR / @vite/client en environnement Cloud Run iframe
+        window.addEventListener('error', function(e) {
+          var msg = (e && e.message) ? String(e.message) : '';
+          var file = (e && e.filename) ? String(e.filename) : '';
+          if (
+            msg.includes('WebSocket') || 
+            msg.includes('createWebSocketModuleRunnerTransport') || 
+            msg.includes('@vite/client') ||
+            file.includes('@vite/client')
+          ) {
+            if (e.stopImmediatePropagation) e.stopImmediatePropagation();
+            if (e.preventDefault) e.preventDefault();
+            return true;
+          }
+        }, true);
+
+        window.addEventListener('unhandledrejection', function(e) {
+          var reason = e.reason ? (e.reason.message || String(e.reason)) : '';
+          if (
+            reason.includes('WebSocket') || 
+            reason.includes('createWebSocketModuleRunnerTransport') || 
+            reason.includes('@vite/client')
+          ) {
+            if (e.stopImmediatePropagation) e.stopImmediatePropagation();
+            if (e.preventDefault) e.preventDefault();
+            return true;
+          }
+        }, true);
+      })();
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="google" content="notranslate" />
+    
+    <!-- PWA & Mobile Web App Meta Tags -->
+    <meta name="theme-color" content="#059669" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="FinanCaisse" />
+    <meta name="application-name" content="FinanCaisse" />
+    <meta name="msapplication-TileColor" content="#0f172a" />
+
+    <!-- Web App Manifest (Display: standalone) -->
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Apple Touch Icon (180x180 PNG obligatoire pour iOS Safari) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="180x180" href="/apple-touch-icon.png" />
+
+    <!-- Favicon & PWA Icons -->
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/pwa-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/pwa-512x512.png" />
+
+    <title>Remix FinanCaisse Pro - Gestion Financière &amp; Multiservices</title>
+    <meta name="description" content="Application intuitive de gestion financière quotidienne pour caisses et agences de transfert (RIA, Western Union, MoneyGram, Wave, Orange Money, UV Master, Seddo, Banques, Liquidités) avec calculs automatiques et historique cloud." />
+    <meta property="og:title" content="Remix FinanCaisse Pro - Gestion Financière &amp; Multiservices" />
+    <meta property="og:description" content="Application intuitive de gestion financière quotidienne pour caisses et agences de transfert (RIA, Western Union, MoneyGram, Wave, Orange Money, UV Master, Seddo, Banques, Liquidités) avec calculs automatiques et historique cloud." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body class="touch-manipulation overscroll-none select-none md:select-auto notranslate">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+
+    <!-- Enregistrement officiel du Service Worker PWA -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/sw.js', { scope: '/' })
+            .then(function(registration) {
+              console.log('[PWA] Service Worker actif et opérationnel :', registration.scope);
+            })
+            .catch(function(error) {
+              console.warn('[PWA] Enregistrement Service Worker :', error);
+            });
+        });
+      }
+    </script>
+  </body>
+</html>

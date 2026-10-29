@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#059669" />
+      <stop offset="50%" stop-color="#0d9488" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+    <filter id="dropShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-opacity="0.35" />
+    </filter>
+  </defs>
+
+  <!-- Background squircle -->
+  <rect width="512" height="512" rx="112" fill="url(#bgGrad)" />
+
+  <!-- Inner subtle border -->
+  <rect x="8" y="8" width="496" height="496" rx="104" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="6" />
+
+  <!-- Main Wallet Icon & Floating Gold Coin -->
+  <g filter="url(#dropShadow)" transform="translate(4, -8)">
+    <!-- Floating Gold Coin (CFA Currency) -->
+    <circle cx="210" cy="170" r="44" fill="url(#goldGrad)" stroke="#ffffff" stroke-width="6" />
+    <text x="210" y="184" font-family="'JetBrains Mono', monospace, sans-serif" font-weight="900" font-size="38" fill="#ffffff" text-anchor="middle">F</text>
+
+    <!-- Main Wallet Body -->
+    <rect x="136" y="220" width="232" height="160" rx="32" fill="#0f172a" stroke="#ffffff" stroke-width="8" />
+    
+    <!-- Wallet Flap -->
+    <path d="M 136 260 L 368 260" stroke="rgba(255,255,255,0.4)" stroke-width="4" stroke-dasharray="8 6" />
+    
+    <!-- Wallet Clasp -->
+    <rect x="310" y="276" width="62" height="48" rx="20" fill="url(#goldGrad)" stroke="#ffffff" stroke-width="5" />
+    <circle cx="341" cy="300" r="10" fill="#ffffff" />
+  </g>
+</svg>

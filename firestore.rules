@@ -1,0 +1,88 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Default deny all
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() > 0 && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    function isAdmin() {
+      return isSignedIn() && (
+        request.auth.token.email == 'dialloannoir22@gmail.com' ||
+        exists(/databases/$(database)/documents/admins/$(request.auth.uid))
+      );
+    }
+
+    function isValidUser(data) {
+      return data.id is string && data.id == request.auth.uid &&
+             data.email is string && data.email.size() <= 200 &&
+             data.role in ['admin', 'manager', 'cashier'] &&
+             data.createdAt is string &&
+             data.updatedAt is string;
+    }
+
+    function isValidDailyRecord(data) {
+      return data.id is string && data.id.size() <= 64 &&
+             data.date is string && data.date.matches('^[0-9]{4}-[0-9]{2}-[0-9]{2}$') &&
+             data.userId is string && data.userId == request.auth.uid &&
+             data.compartments is list &&
+             data.createdAt is string &&
+             data.updatedAt is string;
+    }
+
+    // Profils utilisateurs
+    match /users/{userId} {
+      allow get: if isOwner(userId) || isAdmin();
+      allow list: if isAdmin();
+      allow create: if isOwner(userId) && isValidId(userId) && isValidUser(incoming()) && (
+        incoming().role == 'cashier' || isAdmin()
+      );
+      allow update: if (isOwner(userId) || isAdmin()) && isValidId(userId) && isValidUser(incoming()) && (
+        incoming().id == existing().id &&
+        incoming().email == existing().email &&
+        incoming().createdAt == existing().createdAt &&
+        (isAdmin() || incoming().role == existing().role)
+      );
+      allow delete: if isAdmin();
+    }
+
+    // Fiches journalières de caisse et de transferts
+    match /records/{recordId} {
+      allow read: if isSignedIn();
+      allow create: if isSignedIn() && isValidId(recordId) && isValidDailyRecord(incoming());
+      allow update: if isSignedIn() && isValidId(recordId) && isValidDailyRecord(incoming()) && (
+        existing().userId == request.auth.uid || isAdmin()
+      ) && incoming().id == existing().id && incoming().date == existing().date && incoming().userId == existing().userId;
+      allow delete: if isSignedIn() && isValidId(recordId) && (
+        existing().userId == request.auth.uid || isAdmin()
+      );
+    }
+
+    // Admins collection
+    match /admins/{adminId} {
+      allow read: if isSignedIn();
+      allow write: if isAdmin();
+    }
+  }
+}

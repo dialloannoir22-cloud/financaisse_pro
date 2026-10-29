@@ -1,0 +1,77 @@
+{
+  "id": "/",
+  "name": "Remix FinanCaisse Pro - Gestion Financière & Multiservices",
+  "short_name": "FinanCaisse",
+  "description": "Application intuitive de gestion financière quotidienne pour caisses et agences de transfert d'argent (RIA, Western Union, MoneyGram, Wave, Orange Money, UV Master, Seddo, Banques, Liquidités).",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui", "browser"],
+  "orientation": "portrait-primary",
+  "background_color": "#0f172a",
+  "theme_color": "#059669",
+  "lang": "fr",
+  "dir": "ltr",
+  "categories": ["finance", "business", "productivity"],
+  "icons": [
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-maskable-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Caisse du Jour",
+      "short_name": "Caisse",
+      "description": "Consulter et saisir les compartiments début et fin de journée",
+      "url": "/?tab=compartments",
+      "icons": [{ "src": "/pwa-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Transferts RIA / WU / MG",
+      "short_name": "Transferts",
+      "description": "Enregistrer un retrait (M1/M2) ou un envoi d'argent",
+      "url": "/?tab=transfers",
+      "icons": [{ "src": "/pwa-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Partenaires Seddo",
+      "short_name": "Seddo",
+      "description": "Gérer les règlements libres des partenaires",
+      "url": "/?tab=seddo",
+      "icons": [{ "src": "/pwa-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Dashboard Résumé",
+      "short_name": "Dashboard",
+      "description": "Visualiser le reliquat et l'équilibre général",
+      "url": "/?tab=dashboard",
+      "icons": [{ "src": "/pwa-192x192.png", "sizes": "192x192" }]
+    }
+  ]
+}
